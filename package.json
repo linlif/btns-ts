@@ -1,6 +1,6 @@
 {
 "name": "btns-ts",
-"version": "0.1.0",
+"version": "0.1.1",
 "private": false,
 "main": "build/index.js",
 "module": "build/index.js",
@@ -16,7 +16,7 @@
   "license": "MIT",
   "repository": {
     "types": "git",
-    "url": "https://github.com/linlif/btns-ts.git"
+    "url": "https://github.com/linlif/btns-ts"
   },
   "files": [
     "build"
