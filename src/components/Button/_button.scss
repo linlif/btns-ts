@@ -1,0 +1,133 @@
+button {
+    outline: 0;
+    // border: none;
+    border: 1px solid #d9d9d9;
+}
+
+button:not(.btn-block) + button:not(.btn-block) {
+    margin-left: 10px;
+}
+
+button:not(.btn-inline) + button:not(.btn-inline) {
+    // margin-top: 10px;
+}
+
+.dd-btn {
+    position: relative;
+    display: inline-block;
+    font-weight: $btn-font-weight;
+    line-height: $btn-line-height;
+    color: $body-color;
+    white-space: nowrap;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    user-select: none;
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    cursor: pointer;
+    &.disabled,
+    &[disabled] {
+        cursor: not-allowed;
+        opacity: $btn-disabled-opacity;
+        box-shadow: none;
+        > * {
+            pointer-events: none;
+        }
+    }
+}
+
+.btn-lg {
+    @include button-size($btn-padding-y-lg, $btn-padding-x-lg, $btn-font-size, $btn-border-radius);
+    &.btn-round {
+        border-radius: 42px;
+    }
+    &.btn-icon-only {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        padding: 0;
+    }
+}
+.btn-md {
+    @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $btn-border-radius);
+    &.btn-round {
+        border-radius: 38px;
+    }
+    &.btn-icon-only {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+        padding: 0;
+    }
+}
+.btn-sm {
+    @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size, $btn-border-radius);
+    &.btn-round {
+        border-radius: 34px;
+    }
+    &.btn-icon-only {
+        width: 26px;
+        height: 26px;
+        font-size: 12px;
+        padding: 0;
+    }
+}
+
+.btn-primary {
+    @include button-style($primary, $primary, $white);
+}
+.btn-default {
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary);
+    border-width: 1px;
+    border-style: solid;
+}
+.btn-danger {
+    @include button-style($danger, $danger, $white);
+    &.btn-clicked {
+        @include clickAnimation($danger, 2px, pulseAniDanger);
+    }
+}
+
+.btn-clicked {
+    @include clickAnimation($primary, 2px, pulseAniPrimary);
+}
+
+.btn-dash {
+    @include button-style($white, $gray-400, $body-color, $white, $primary, $primary);
+    border-width: 1px;
+    border-style: dashed;
+}
+
+.btn-link {
+    font-weight: $font-weight-normal;
+    color: $btn-link-color;
+    text-decoration: $link-decoration;
+    box-shadow: none;
+    border: none;
+    background: none;
+    &:hover {
+        color: $btn-link-hover-color;
+        text-decoration: $link-hover-decoration;
+    }
+    &:disabled,
+    &.disabled {
+        color: $btn-link-disabled-color;
+        // pointer-events: none;
+        background: none;
+        text-decoration: none;
+    }
+    &:focus,
+    &:active,
+    &.focus {
+        background: none;
+    }
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+.btn-circle {
+    border-radius: 50%;
+}

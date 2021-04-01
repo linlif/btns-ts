@@ -1,24 +1,21 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Button from './components/Button';
+import './styles/index.scss'; // 引入样式
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Button</h1>
+      <h2>不同类型的按钮</h2>
+      <div style={{ display: 'flex', alignItems: 'flex-start' }}>
+        <Button btnType="default">default</Button>
+        <Button btnType="primary">primary</Button>
+        <Button btnType="danger">danger</Button>
+        <Button btnType="dash">dash</Button>
+        <Button btnType="link">link</Button>
+      </div>
     </div>
   );
 }

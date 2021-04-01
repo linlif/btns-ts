@@ -1,0 +1,66 @@
+@mixin button-size($padding-y, $padding-x, $font-size, $border-radius) {
+    padding: $padding-y $padding-x;
+    font-size: $font-size;
+    border-radius: $border-radius;
+}
+
+@mixin button-style(
+    $background,
+    $border,
+    $color,
+    $hover-background: lighten($background, 7.5%),
+    $hover-border: lighten($border, 10%),
+    $hover-color: $color
+) {
+    background: $background;
+    border-color: $border;
+    color: $color;
+    &:hover {
+        background: $hover-background;
+        color: $hover-color;
+        border-color: $hover-border;
+    }
+    &:focus,
+    &.focus {
+        background: $hover-background;
+        color: $hover-color;
+        border-color: $hover-border;
+    }
+    &:disabled,
+    &.disabled {
+        color: $color;
+        background: $hover-background;
+        border-color: $border;
+    }
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin clickAnimation($color, $borderRadius, $animationName) {
+    border-radius: $borderRadius;
+    animation: $animationName 1s;
+    @include keyframes($animationName) {
+        0% {
+            box-shadow: 0 0 0 0 rgba($color, 0.4);
+        }
+        70% {
+            box-shadow: 0 0 0 5px rgba($color, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba($color, 0);
+        }
+    }
+}

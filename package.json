@@ -1,15 +1,37 @@
 {
-  "name": "btns-ts",
-  "version": "0.1.0",
-  "private": true,
+"name": "btns-ts",
+"version": "0.1.0",
+"private": false,
+"main": "build/index.js",
+"module": "build/index.js",
+"types": "build/index.d.ts",
+"decription": "A react UI component",
+"author": "linlif",
+"keyword": [
+  "UI",
+  "React",
+  "Component",
+  "TypeScript"
+],
+  "license": "MIT",
+  "repository": {
+    "types": "git",
+    "url": "https://github.com/linlif/btns-ts.git"
+  },
+  "files": [
+    "build"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@types/classnames": "^2.2.11",
     "@types/jest": "^26.0.15",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "classnames": "^2.2.6",
+    "normalize-scss": "^7.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
@@ -20,7 +42,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build-ts": "tsc -p tsconfig.build.json",
+    "build-css": "node-sass ./src/styles/index.scss ./build/index.css",
+    "clean": "rimraf ./build",
+    "lint": "eslint --ext js,ts,jsx src --max-warnings 5",
+    "build-lib": "npm run clean && npm run build-ts && npm run build-css"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +66,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.11",
+    "node-sass": "^5.0.0"
   }
 }
