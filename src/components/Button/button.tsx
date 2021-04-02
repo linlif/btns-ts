@@ -2,17 +2,27 @@
 /*
 * 基本类型
 let str: string = '' // 字符串类型
+
 let bool: boolean = false // 布尔类型
+
 let num: number = 0 // 数字类型
+
 let arr: number[] = [1, 2, 3] // 数字型数组
+
 let arrT: Array<string> = ['1', '2', '3'] // 泛型的方式定义数组
+
 let tuple: [string, number] = ['1', 1] // 元组类型
+
 enum Color { 'Red', Green, Blue } // 枚举类型
 let c: Color = Color.Red // 获取枚举类型的值
+
 let any: any = 1 // 任意类型
 any = '1' // 任意类型可以随便赋值
+
 let unusable: void = undefined // void 只能赋值undefined或者null
+
 let u: undefined = undefined // undefined 类型
+
 let n: null = null // null 类型
 
 // never类型
